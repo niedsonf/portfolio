@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/helpers/controllers.dart';
+import 'package:portfolio/routing/routes.dart';
 import 'package:portfolio/widgets/triangle_widget.dart';
 
 class RadialMenu extends StatefulWidget {
@@ -75,16 +77,29 @@ class _RadialMenuState extends State<RadialMenu> with TickerProviderStateMixin {
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
-          const TriangleWidget(text: 'Explore', icon: Icons.explore),
+          TriangleWidget(
+            text: 'Explore',
+            icon: Icons.explore,
+            onTap: () {
+              if (menuController.activePage.value != HomeRoute) {
+                menuController.navigatoTo(HomeRoute);
+              }
+            },
+          ),
           Container(
             margin: const EdgeInsets.only(bottom: 330),
             child: SlideTransition(
               position: topMoveAnimation,
               child: FadeTransition(
                   opacity: opacityAnimation,
-                  child: const TriangleWidget(
+                  child: TriangleWidget(
                     text: 'Profile',
                     icon: Icons.verified_user_rounded,
+                    onTap: () {
+                      if (menuController.activePage.value != ProfileRoute) {
+                        menuController.navigatoTo(ProfileRoute);
+                      }
+                    },
                   )),
             ),
           ),
@@ -96,9 +111,14 @@ class _RadialMenuState extends State<RadialMenu> with TickerProviderStateMixin {
                 turns: rightRotateAnimation,
                 child: FadeTransition(
                     opacity: opacityAnimation,
-                    child: const TriangleWidget(
+                    child: TriangleWidget(
                       text: 'Skills',
                       icon: Icons.checklist,
+                      onTap: () {
+                        if (menuController.activePage.value != SkillsRoute) {
+                          menuController.navigatoTo(SkillsRoute);
+                        }
+                      },
                     )),
               ),
             ),
@@ -111,9 +131,14 @@ class _RadialMenuState extends State<RadialMenu> with TickerProviderStateMixin {
                 turns: leftRotateAnimation,
                 child: FadeTransition(
                     opacity: opacityAnimation,
-                    child: const TriangleWidget(
+                    child: TriangleWidget(
                       text: 'Experiences',
                       icon: Icons.webhook,
+                      onTap: () {
+                        if (menuController.activePage.value != PortfolioRoute) {
+                          menuController.navigatoTo(PortfolioRoute);
+                        }
+                      },
                     )),
               ),
             ),

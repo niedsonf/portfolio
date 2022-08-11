@@ -22,19 +22,19 @@ class _TypingTextState extends State<TypingText>
             style: TextStyle(
                 fontSize: 34,
                 color: Colors.white,
-                fontWeight: FontWeight.w300)),
+                fontWeight: FontWeight.w100)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(
-              width: 220,
+              width: 180,
               height: 50,
-              child: Text("and I'm love",
+              child: Text("and I love",
                   style: TextStyle(
                       fontSize: 34,
                       color: Colors.white,
-                      fontWeight: FontWeight.w300)),
+                      fontWeight: FontWeight.w100)),
             ),
             SizedBox(
               height: 50,
@@ -42,7 +42,7 @@ class _TypingTextState extends State<TypingText>
                 style: const TextStyle(
                     fontSize: 38,
                     color: Colors.pink,
-                    fontWeight: FontWeight.w800),
+                    fontWeight: FontWeight.w300),
                 child: AnimatedTextKit(
                     pause: const Duration(seconds: 0),
                     repeatForever: true,
@@ -50,7 +50,7 @@ class _TypingTextState extends State<TypingText>
                       RotateAnimatedText('Flutter'),
                       RotateAnimatedText('Discord'),
                       RotateAnimatedText('3D Printing'),
-                      RotateAnimatedText('Technologies'),
+                      RotateAnimatedText('Technology'),
                     ]),
               ),
             )

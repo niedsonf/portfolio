@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 class TriangleWidget extends StatefulWidget {
   final String text;
-  final IconData icon;
-
-  const TriangleWidget({super.key, required this.text, required this.icon});
+  IconData icon;
+  final Function() onTap;
+  TriangleWidget(
+      {super.key, required this.text, required this.icon, required this.onTap});
   @override
   State<TriangleWidget> createState() => _TriangleWidgetState();
 }
@@ -18,7 +19,9 @@ class _TriangleWidgetState extends State<TriangleWidget> {
     return ClipPath(
       clipper: ClipHome(),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          widget.onTap();
+        },
         onHover: (value) {
           setState(() {
             isHovering = value;
