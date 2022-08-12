@@ -7,11 +7,7 @@ class SkillsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: [pink, darker],
-              begin: AlignmentDirectional.bottomStart,
-              end: AlignmentDirectional.topEnd)),
+      decoration: const BoxDecoration(color: pink),
       child: Row(
         children: [
           const Expanded(child: Text('Skills Page')),

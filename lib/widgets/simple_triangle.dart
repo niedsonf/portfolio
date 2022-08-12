@@ -21,8 +21,8 @@ class _SimpleTriangleState extends State<SimpleTriangle> {
           children: [
             Container(
               color: const Color(0xFF3B3A4D),
-              width: 100,
-              height: 100 * math.sin(1.0472),
+              width: 50,
+              height: 50 * math.sin(1.0472),
             ),
             CustomPaint(
               painter: BorderPainter(),
@@ -39,10 +39,10 @@ class ClipHome extends CustomClipper<Path> {
   Path getClip(Size size) {
     Path path = Path();
 
-    path.lineTo(100, 0); //posição de x= 0  e y = o valor máximo
+    path.lineTo(50, 0); //posição de x= 0  e y = o valor máximo
 
-    path.lineTo(100 * math.cos(1.0472),
-        100 * math.sin(1.0472)); //posição de x= o valor máximo e y = 0
+    path.lineTo(50 * math.cos(1.0472),
+        50 * math.sin(1.0472)); //posição de x= o valor máximo e y = 0
     path.lineTo(0, 0); //posição de x= o valor máximo e y = 0
     path.close();
     return path;
@@ -63,10 +63,10 @@ class BorderPainter extends CustomPainter {
       ..color = Colors.pink;
     Path path = Path();
 //    uncomment this and will get the border for all lines
-    path.lineTo(100, 0); //posição de x= 0  e y = o valor máximo
+    path.lineTo(50, 0); //posição de x= 0  e y = o valor máximo
 
-    path.lineTo(100 * math.cos(1.0472),
-        100 * math.sin(1.0472)); //posição de x= o valor máximo e y = 0
+    path.lineTo(50 * math.cos(1.0472),
+        50 * math.sin(1.0472)); //posição de x= o valor máximo e y = 0
     path.lineTo(0, 0); //posição de x= o valor máximo e y = 0
     path.close();
     canvas.drawPath(path, paint);

@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/simple_triangle.dart';
 
@@ -12,25 +13,15 @@ class TriangleInfo extends StatelessWidget {
       children: [
         const SimpleTriangle(),
         Padding(
-          padding: const EdgeInsets.only(left: 40),
-          child: Text.rich(
-            TextSpan(children: [
-              TextSpan(
-                  text: text.substring(0, 1),
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w100)),
-              TextSpan(
-                  text: text.substring(1),
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w100)),
-            ]),
-            textAlign: TextAlign.center,
-          ),
-        )
+            padding: const EdgeInsets.only(left: 40),
+            child: DefaultTextStyle(
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w100),
+                child: AnimatedTextKit(
+                    totalRepeatCount: 1,
+                    animatedTexts: [TypewriterAnimatedText(text)]))),
       ],
     );
   }
